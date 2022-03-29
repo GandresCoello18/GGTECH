@@ -36,7 +36,7 @@ export const NewPelicula = async (req: Request, res: Response) => {
 
     const platforms = req.body.platforms as TitlePlataformas[];
 
-    if (!title || !slug || !image || !director || !platforms.length) {
+    if (!title || !slug || !image || !director || !platforms || !platforms.length) {
       const response = { status: 'Datos incompletos, revise y vuelva ha intentarlo' };
       req.logger.warn(response);
       return res.status(400).json(response);
